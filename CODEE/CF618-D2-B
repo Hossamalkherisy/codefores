@@ -1,0 +1,31 @@
+//hossam al kherisy
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+using namespace std;
+const int maxn = 1e5 + 1;
+int n, p, mx, a[maxn], flag;
+int main(){
+
+		cin >> n;
+		for (int i = 0; i < n; i++){
+			mx = 0;
+			for (int y = 0; y < n; y++){
+				cin >> p;
+				if (p > mx)
+					mx = p;
+			}
+			if (mx == n - 1 && flag == 0){
+				flag = 1;
+				a[i] = mx + 1;
+			}
+			else
+				a[i] = mx;
+		}
+		for (int i = 0; i < n; i++)
+			cout << a[i] << " ";
+	}
