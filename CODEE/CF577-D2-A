@@ -1,0 +1,19 @@
+//hossam al kherisy
+//#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<vector>
+using namespace std;
+//long long  a[1000001];
+int main(){
+	long long h, hh;
+	cin >> h >> hh; long long c = 0;
+	for (long long i = 1; i <= h; i++){
+		if (hh%i == 0 && hh / i <= h)
+			c++;
+	}
+	cout << c<<"\n";
+	}
