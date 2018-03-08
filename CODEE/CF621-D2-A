@@ -1,0 +1,24 @@
+//hossam al kherisy
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+using namespace std;
+long long arr[101], ar[100001];
+int main(){
+	long long i, n, x, pk = INT_MAX, sum=0;
+	cin >> n;
+	for (i = 0; i<n; i++){
+		cin >> x;
+		sum = sum + x;
+		if (x % 2 == 1 && x<pk) 
+			pk = x;
+	}
+	if (sum % 2 == 0) 
+		cout << sum; 
+	else
+		cout << sum - pk;
+}
