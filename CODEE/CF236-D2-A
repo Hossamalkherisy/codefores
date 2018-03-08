@@ -1,0 +1,46 @@
+//hossam al kherisy
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <sstream>
+#include <cstdio>
+#include <set>
+#include <list>
+using namespace std;
+
+int main(){
+	string s;
+	cin >> s;
+	int h[123] = {0};
+	for (int i = 0; i < s.size(); i++){
+		int x;
+		x = (int)s[i];
+		if (h[x] == 0)
+			h[x]++;
+		else
+			continue;
+	}
+	int c = 0;
+	for (int i = 96; i < 123; i++){
+		
+			c+=h[i];
+	}
+	//cout << c;
+	if (c % 2 == 1)
+	
+	
+		cout << "IGNORE HIM!" ;
+	
+	else
+	
+		cout << "CHAT WITH HER!" ;
+	
+}
