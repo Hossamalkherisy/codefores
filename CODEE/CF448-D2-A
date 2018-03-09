@@ -1,0 +1,40 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <sstream>
+#include <cstdio>
+#include <set>
+#include <complex>
+#include <list>
+using namespace std;
+long long arr[101], ar[100001];
+int main(){
+	long long m,n,h;
+	long long a, b, c, x, y, z;
+	cin >> a >> b >> c;
+	cin >> x >> y >> z;
+	m = a + b + c;
+	n = x + y + z;
+	long long i, j;
+	i = m / 5;
+	j = n / 10;
+	if (i * 5 != m)
+		i = i + 1;
+	if (j * 10 != n)
+		j = j + 1;
+	cin >> h;
+	if (i+j<=h)
+		cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
+}
