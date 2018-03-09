@@ -1,0 +1,38 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <sstream>
+#include <cstdio>
+#include <set>
+#include <complex>
+#include <list>
+using namespace std;
+long long arr[101], ar[100001];
+int main(){
+	string s,ss;
+	while (getline(cin, s)){
+
+		for (int i = 0; i < s.size(); i++){
+			if (s[i] != ' ')
+				ss += s[i];
+			else{
+				reverse(ss.begin(), ss.end());
+				cout << ss << " ";
+				ss = "";
+			}
+		}
+		reverse(ss.begin(), ss.end());
+		cout << ss << endl;
+		ss = "";
+	}
+}
