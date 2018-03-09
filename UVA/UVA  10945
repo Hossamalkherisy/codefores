@@ -1,0 +1,37 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <sstream>
+#include <cstdio>
+#include <set>
+#include <complex>
+#include <list>
+using namespace std;
+long long arr[101], ar[100001];
+int main(){
+	string s;
+	while (getline(cin,s)&&s!="DONE")
+	{
+		string ss, sss;
+		for (int i = 0; i < s.size(); i++){
+			if (isalpha(s[i]))ss += tolower(s[i]);
+		}
+		sss = ss;
+		reverse(sss.begin(), sss.end());
+		if (sss == ss)
+			cout << "You won't be eaten!\n";
+		else
+			cout <<"Uh oh..\n";
+	}
+
+}
