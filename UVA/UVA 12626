@@ -1,0 +1,23 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include <map>
+#include <list>
+using namespace std;
+long long arr[101], ar[100001];
+int main(){
+	long long x,h=0;
+	cin >> x;
+	
+	while (x){
+		h += x % 2;
+		x = x/ 2;
+	}
+	cout << h << "\n";
+}
