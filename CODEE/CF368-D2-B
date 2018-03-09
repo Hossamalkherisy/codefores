@@ -1,0 +1,38 @@
+//hossam al kherisy
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+using namespace std;
+int main(){
+	long long n, m, b[500100], a[500100];
+	cin >> n >> m;
+	for (int i = 1; i <= n; i++){
+		cin >> a[i];
+	}
+
+	for (int i = 1; i <= m; i++){
+		cin >> b[i];
+	}
+
+
+	bool ed[500100];
+	int ans[500100];
+	ans[n + 1] = 0;
+
+	for (int i = n; i >= 1; i--){
+		ans[i] = ans[i + 1];
+		if (!ed[a[i]]) { 
+			ans[i] ++;
+			ed[a[i]] = 1;
+		}
+	}
+
+	for (int i = 1; i <= m; i++){
+		cout << ans[b[i]] << "\n";
+	}
+
+}
