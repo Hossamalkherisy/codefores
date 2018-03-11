@@ -1,0 +1,47 @@
+//hossam al kherisy
+//#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<vector>
+using namespace std;
+
+//long long n, a, arr[10001];
+int main()
+{
+	int n;
+	while (cin >> n)
+	{
+		if (n == 0)
+			return 0;
+
+		string s;
+		cin >> s;
+		
+		int h = -1, r = -1, z, hh = 10000000;
+		
+		for (int i = 0; i < n; i++)
+		{
+			if (s[i] == 'D')
+			{
+				h = i;
+				if (r != -1)
+					hh = min(hh, abs(h - r));
+			}
+			else if (s[i] == 'R')
+			{
+				r = i;
+				if (h != -1)
+					hh = min(hh, abs(h - r));
+			}
+			else if (s[i] == 'Z')
+			{
+				hh = 0; break;
+			}
+		}
+		cout << hh << endl;
+	}
+	return 0;
+}
