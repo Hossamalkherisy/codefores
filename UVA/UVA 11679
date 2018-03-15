@@ -1,0 +1,45 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<vector>
+#include<bitset>
+#include<set>
+using namespace std;
+
+int main(){
+   int n , q;
+    while( cin >>n>>q)
+    {
+        if(n==0||q==0)
+        break;
+        vector<int>arr(21);
+        for( int i = 1 ; i <= n; i ++ )
+            cin>>arr[i];
+
+        for( int j = 0 ;j < q ; j ++)
+        {
+            int m , d ,c ;
+            cin>>d>>c>>m;
+            arr[d] -= m;
+            arr[c] += m;
+        }
+        int h = 0;
+        for( int i = 1 ; i <= n ; i ++)
+            if( arr[i] < 0 )
+        {
+            h= 1;
+            break;
+        }
+        if( h==1 )
+        {
+            cout<<"N"<<endl;
+            continue;
+        }
+        else
+            cout<<"S"<<endl;
+    }
+}
