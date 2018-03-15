@@ -1,0 +1,44 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<vector>
+#include<bitset>
+#include<set>
+using namespace std;
+
+int main(){
+    int  n,x;
+    while(cin>>n){
+      if(n==0)
+     break;
+      multiset<int>s;
+      for(int i= 0 ; i < n ;i++)
+      {
+          cin>>x;
+          s.insert(x);
+      }
+       auto ss= s.begin();
+       auto sss = s.begin();
+      if(s.size()>1)
+          sss++;
+          
+          long long sum=0;
+          
+          while(s.size()>1){
+           sum += *ss + *sss;
+			s.insert(*ss + *sss);
+			s.erase(ss);
+			s.erase(sss);
+			ss = s.begin();
+			sss = s.begin();
+			if (s.size() > 1)
+				ss++;
+          }
+          
+      cout<<sum<<endl;
+    }
+}
