@@ -1,0 +1,44 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<cmath>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<vector>
+#include<bitset>
+#include<set>
+#include<queue>
+using namespace std;
+
+int main(){
+  
+	int n;
+	while (cin >> n){
+		if (n==0)
+		return 0;
+		if (n == 1){
+			cout << "Discarded cards:\n";
+			cout << "Remaining card: 1" << endl;
+			continue;
+		}
+		queue<int>q, a;
+		for (int i = 1; i <= n; i++){
+			q.push(i);
+		}
+		while (q.size() > 1){
+			a.push(q.front());
+			q.pop();
+			q.push(q.front());
+			q.pop();
+		}
+			cout << "Discarded cards: " << 1, a.pop();
+			
+		while (!a.empty()){
+			cout << ", " << a.front(), a.pop();
+		}
+		cout << endl;
+ 
+		cout << "Remaining card: " << q.front() << endl;
+	}
+}
