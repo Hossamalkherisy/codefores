@@ -1,0 +1,53 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
+#include <bitset>
+#include <string.h>
+#include <iomanip>
+#include <vector>
+#include <set>
+#include <map>
+#include <queue>
+using namespace std;
+int  binary(int x, int y)
+{
+	int  frist = 1, mid = 0;
+	int last = x;	
+	while (frist<last)
+	{
+		mid = (frist+last)/2;
+		int trry = mid, count = 0;
+		while (trry)
+		{
+			count += trry;
+			trry /= y;
+		}
+
+		if (count < x)      frist = mid+1;
+		else    last = mid ;  
+	}
+	return last;
+}
+int main()
+{
+    int n, m, h, x;
+	while (cin >> n >> m){
+		h = 0;
+		if (n==0&&m==0)
+		return 0;
+		map<int, int>mpp;
+		while (n--){
+			cin >> x, mpp[x]++;
+		}
+		while (m--){
+			cin >> x, h += mpp[x];
+		}
+		cout << h << endl;
+	}
+
+}
