@@ -1,0 +1,76 @@
+//hossam al kherisy
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
+#include <bitset>
+#include <string.h>
+#include <iomanip>
+#include <vector>
+#include <set>
+#include <map>
+#include <queue>
+using namespace std;
+int  binary(int x, int y)
+{
+	int  frist = 1, mid = 0;
+	int last = x;	
+	while (frist<last)
+	{
+		mid = (frist+last)/2;
+		int trry = mid, count = 0;
+		while (trry)
+		{
+			count += trry;
+			trry /= y;
+		}
+
+		if (count < x)      frist = mid+1;
+		else    last = mid ;  
+	}
+	return last;
+}
+int a, b, c;
+bool hh(int x,int y,int z)
+{
+	if ((x + y + z) != a)return 0;
+	if ((x*y*z) != b)return 0;
+	if ((x*x + y * y + z * z) != c)return 0;
+	return 1;
+}
+int main(){
+	
+	int h;
+	cin >> h;
+	while (h--)
+	{
+	    bool g = 0;
+		cin >> a >> b >> c;
+		for (int x = -100; x < 101; x++)
+		{
+			for (int y = x+1; y < 101; y++)
+			{
+				for (int z = y+1; z < 101; z++)
+				{
+					if (hh(x, y, z)) {
+					g = 1; 
+					cout << x << " " << y << " " << z << endl;
+					break; 
+					    
+					}
+				}
+				if (g==1)
+				break;
+			}
+			if (g==1)
+			break;
+		}
+		if (g==1)
+		continue;
+		cout << "No solution."<<endl;
+	}
+
+}
